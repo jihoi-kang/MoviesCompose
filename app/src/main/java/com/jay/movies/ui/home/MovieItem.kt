@@ -1,4 +1,4 @@
-package com.jay.movies.ui
+package com.jay.movies.ui.home
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -20,7 +20,7 @@ import com.jay.movies.model.Movie
 @Composable
 fun MovieItem(
     movie: Movie,
-    navigationToDetail: (Movie) -> Unit
+    selectMovie: (Movie) -> Unit,
 ) {
     Card(
         modifier = Modifier
@@ -29,7 +29,7 @@ fun MovieItem(
         elevation = 2.dp,
         shape = RoundedCornerShape(corner = CornerSize(16.dp))
     ) {
-        Row(Modifier.clickable { navigationToDetail(movie) }) {
+        Row(Modifier.clickable { selectMovie(movie) }) {
             MovieImage(movie.imageUrl)
             Column(
                 modifier = Modifier
