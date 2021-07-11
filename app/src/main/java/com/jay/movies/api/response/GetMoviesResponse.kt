@@ -1,6 +1,7 @@
 package com.jay.movies.api.response
 
 import com.google.gson.annotations.SerializedName
+import com.jay.movies.model.Movie
 
 data class GetMoviesResponse(
     @SerializedName("results")
@@ -39,3 +40,11 @@ data class GetMoviesResponse(
         val voteAverage: Float = 0f,
     )
 }
+
+private const val BASE_BACKDROP_PATH = "https://image.tmdb.org/t/p/w780"
+
+fun GetMoviesResponse.MovieResponse.toUiModel() =
+    Movie(
+        title = this.title,
+        imageUrl = "$BASE_BACKDROP_PATH${this.posterPath}",
+    )

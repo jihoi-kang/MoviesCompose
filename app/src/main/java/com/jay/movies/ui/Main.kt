@@ -9,12 +9,13 @@ import com.jay.movies.ui.home.Home
 import com.jay.movies.ui.nav.NavScreen
 
 @Composable
-fun Main() {
+fun Main(viewModel: MainViewModel) {
     val navController = rememberNavController()
 
     NavHost(navController = navController, startDestination = NavScreen.Home.route) {
         composable(NavScreen.Home.route) {
             Home(
+                viewModel = viewModel,
                 selectMovie = {
                     navController.navigate(NavScreen.Detail.route)
                 }

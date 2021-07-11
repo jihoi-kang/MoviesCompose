@@ -10,8 +10,8 @@ interface ApiService {
 
     @GET("/3/discover/movie")
     suspend fun getMovies(
-        @Query("sort_by") sortBy: String,
         @Query("page") page: Int,
+        @Query("sort_by") sortBy: String = "Popularity",
         @Query("release_date.lte") today: String = SimpleDateFormat("yyyy-MM-dd").format(Date()),
     ): GetMoviesResponse
 
