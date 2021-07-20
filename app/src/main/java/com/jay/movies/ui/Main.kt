@@ -22,7 +22,7 @@ fun Main(viewModel: MainViewModel) {
             )
         }
         composable(NavScreen.Detail.route) {
-            Detail()
+            Detail(navController)
         }
     }
 }
