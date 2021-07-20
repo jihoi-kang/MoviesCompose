@@ -12,7 +12,8 @@ import com.jay.movies.ui.layout.NavigateIconAppBar
 
 @Composable
 fun Detail(
-    navController: NavController
+    navController: NavController,
+    movieId: String
 ) {
     Scaffold(
         topBar = {
@@ -21,7 +22,7 @@ fun Detail(
             )
         }
     ) {
-        Text(text = "Hello Detail")
+        Text(text = "$movieId")
     }
 }
 

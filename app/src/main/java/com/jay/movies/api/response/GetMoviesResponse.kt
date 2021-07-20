@@ -10,7 +10,7 @@ data class GetMoviesResponse(
     val totalPages: Int = 0,
 ) {
     data class MovieResponse(
-        @SerializedName("results")
+        @SerializedName("id")
         val id: Int,
         @SerializedName("poster_path")
         val posterPath: String? = "",
@@ -45,6 +45,7 @@ private const val BASE_BACKDROP_PATH = "https://image.tmdb.org/t/p/w780"
 
 fun GetMoviesResponse.MovieResponse.toUiModel() =
     Movie(
+        id = this.id,
         title = this.title,
         imageUrl = "$BASE_BACKDROP_PATH${this.posterPath}",
     )

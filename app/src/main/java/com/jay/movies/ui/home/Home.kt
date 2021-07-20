@@ -8,17 +8,18 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.items
 import com.jay.movies.R
-import com.jay.movies.model.Movie
 import com.jay.movies.ui.MainViewModel
 import com.jay.movies.ui.layout.BaseAppBar
+import com.jay.movies.ui.nav.NavScreen
 
 @Composable
 fun Home(
+    navController: NavController,
     viewModel: MainViewModel,
-    selectMovie: (Movie) -> Unit,
 ) {
     val movies = viewModel.movies.collectAsLazyPagingItems()
 
@@ -33,7 +34,9 @@ fun Home(
             contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp)
         ) {
             items(movies) { movie ->
-                MovieItem(movie = movie!!, selectMovie = selectMovie)
+                MovieItem(movie = movie!!) {
+                    navController.navigate("${NavScreen.Detail.route}/${it.id}")
+                }
                 Divider()
             }
         }
