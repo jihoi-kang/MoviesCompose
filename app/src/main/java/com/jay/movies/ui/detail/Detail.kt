@@ -8,7 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import com.jay.movies.R
-import com.jay.movies.ui.layout.NavigateIconAppBar
+import com.jay.movies.ui.custom.NavigateIconAppBar
 
 @Composable
 fun Detail(

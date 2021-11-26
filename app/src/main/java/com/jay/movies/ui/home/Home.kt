@@ -13,7 +13,7 @@ import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.items
 import com.jay.movies.R
 import com.jay.movies.ui.MainViewModel
-import com.jay.movies.ui.layout.BaseAppBar
+import com.jay.movies.ui.custom.BaseAppBar
 import com.jay.movies.ui.nav.NavScreen
 
 @Composable

@@ -1,4 +1,4 @@
-package com.jay.movies.ui.layout
+package com.jay.movies.ui.custom
 
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.height
